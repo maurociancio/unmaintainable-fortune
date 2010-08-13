@@ -10,7 +10,6 @@ class HelloWorld:
         # you don't want the window to be destroyed.
         # This is useful for popping up 'are you sure you want to quit?'
         # type dialogs.
-        print "delete event occurred"
 
         # Change FALSE to TRUE and the main window will not be destroyed
         # with a "delete_event".
