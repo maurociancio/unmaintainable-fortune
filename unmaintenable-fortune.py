@@ -47,15 +47,15 @@ class HelloWorld:
         vbox.show()
 
         # fortune title
-        fortune_title = gtk.Label("your fortune")
+        fortune_title = gtk.Label("your fortune title")
         fortune_title.show()
 
         # fortune description
-        fortune_desc = gtk.Label("your fortune")
+        fortune_desc = gtk.Label("your fortune description")
         fortune_desc.show()
 
-        vbox.add(fortune_title)
-        vbox.add(fortune_desc)
+        vbox.pack_start(fortune_title, expand=False)
+        vbox.pack_start(fortune_desc)
 
     def main(self):
         gtk.main()
