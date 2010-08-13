@@ -48,8 +48,9 @@ class HelloWorld:
         vbox.show()
 
         # fortune title
-        fortune_title = gtk.Label("your fortune title")
+        fortune_title = gtk.Label("<b>your fortune title</b>")
         fortune_title.show()
+        fortune_title.set_use_markup(True)
 
         # fortune description
         fortune_desc = gtk.Label("your fortune description")
