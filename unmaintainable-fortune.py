@@ -16,7 +16,7 @@ class MainWindow:
     def destroy(self, widget, data=None):
         gtk.main_quit()
 
-    def __init__(self):
+    def __init__(self, title, desc):
         # create a new window
         self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
         self.window.set_default_size(520, 240)
@@ -36,14 +36,14 @@ class MainWindow:
         vbox.show()
 
         # fortune title
-        fortune_title = gtk.Label("<b>your fortune title</b>")
+        fortune_title = gtk.Label("<b>%s</b>" % (remove_html(title),))
         fortune_title.set_use_markup(True)
         fortune_title.set_alignment(0, 0.5)
         fortune_title.set_justify(gtk.JUSTIFY_LEFT)
         fortune_title.show()
 
         # fortune description
-        fortune_desc = gtk.Label("your fortune description")
+        fortune_desc = gtk.Label(desc)
         fortune_desc.set_justify(gtk.JUSTIFY_LEFT)
         fortune_desc.set_alignment(0, 0.25)
         fortune_desc.show()
@@ -54,5 +54,5 @@ class MainWindow:
     def main(self):
         gtk.main()
 
-w = MainWindow()
+w = MainWindow("your fortune title", "your fortune description")
 w.main()
