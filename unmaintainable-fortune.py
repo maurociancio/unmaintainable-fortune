@@ -15,6 +15,7 @@ class HelloWorld:
         # create a new window
         self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
         self.window.set_default_size(520, 240)
+        self.window.set_title("unmaintainable code fortunes")
     
         self.window.connect("delete_event", self.delete_event)
         self.window.connect("destroy", self.destroy)
