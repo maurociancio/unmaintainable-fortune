@@ -2,6 +2,11 @@
 
 import pygtk
 import gtk
+import re
+
+def remove_html(data):
+    p = re.compile(r'[<>/]')
+    return p.sub('', data)
 
 class MainWindow:
     def delete_event(self, widget, event, data=None):
