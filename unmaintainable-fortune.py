@@ -49,11 +49,15 @@ class HelloWorld:
 
         # fortune title
         fortune_title = gtk.Label("<b>your fortune title</b>")
-        fortune_title.show()
         fortune_title.set_use_markup(True)
+        fortune_title.set_alignment(0, 0.5)
+        fortune_title.set_justify(gtk.JUSTIFY_LEFT)
+        fortune_title.show()
 
         # fortune description
         fortune_desc = gtk.Label("your fortune description")
+        fortune_desc.set_justify(gtk.JUSTIFY_LEFT)
+        fortune_desc.set_alignment(0, 0.25)
         fortune_desc.show()
 
         vbox.pack_start(fortune_title, expand=False)
