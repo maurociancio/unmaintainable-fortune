@@ -3,7 +3,7 @@
 import pygtk
 import gtk
 
-class HelloWorld:
+class MainWindow:
     def delete_event(self, widget, event, data=None):
         return False
 
@@ -49,5 +49,5 @@ class HelloWorld:
     def main(self):
         gtk.main()
 
-hello = HelloWorld()
-hello.main()
+w = MainWindow()
+w.main()
