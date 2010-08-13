@@ -23,6 +23,7 @@ class HelloWorld:
     def __init__(self):
         # create a new window
         self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
+        self.window.set_default_size(520, 240)
     
         # When the window is given the "delete_event" signal (this is given
         # by the window manager, usually by the "close" option, or on the
