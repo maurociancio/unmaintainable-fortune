@@ -3,6 +3,8 @@
 import pygtk
 import gtk
 import re
+from xml.dom.minidom import parse
+import random
 
 def remove_html(data):
     p = re.compile(r'[<>/]')
@@ -54,5 +56,13 @@ class MainWindow:
     def main(self):
         gtk.main()
 
-w = MainWindow("your fortune title", "your fortune description")
+
+dom = parse("data.xml")
+fortunes = dom.getElementsByTagName("article")
+count = len(fortunes)
+index = random.randint(0, count - 1)
+title = fortunes[index].getElementsByTagName("title")[0].childNodes[0].data
+desc = fortunes[index].getElementsByTagName("description")[0].childNodes[0].data
+
+w = MainWindow(title, desc)
 w.main()
